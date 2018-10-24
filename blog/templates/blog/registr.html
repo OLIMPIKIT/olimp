@@ -1,0 +1,28 @@
+{% extends 'pages/base.html' %}
+{% block additional_styles %}
+<style>
+    body{
+    background:url(static/img/nose.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    }
+</style>
+{% endblock %}
+
+{% block contentblock %}
+<div class="container well">
+
+    <h1> Please Sign Up fellas</h1>
+
+    <form method="POST" action="login.html">
+        {% csrf_token %}
+        {{ form.as_table }}
+
+        <input type="submit" value="OK">
+
+    </form>
+</div>
+
+{% endblock %}
